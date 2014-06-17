@@ -25,7 +25,7 @@ module Formtastic
           </style>
           <script type="text/javascript">
             // make it easier to access the editor later on.
-            _ACE_EDITORS = _ACE_EDITORS or {};
+            window._ACE_EDITORS = window._ACE_EDITORS || {};
             (function() {
               var editor = ace.edit('#{dom_id}-editor');
               editor.setValue(document.getElementById('#{dom_id}').value);
