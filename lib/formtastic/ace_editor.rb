@@ -24,6 +24,8 @@ module Formtastic
             }
           </style>
           <script type="text/javascript">
+            // make it easier to access the editor later on.
+            _ACE_EDITORS = _ACE_EDITORS or {};
             (function() {
               var editor = ace.edit('#{dom_id}-editor');
               editor.setValue(document.getElementById('#{dom_id}').value);
@@ -34,6 +36,11 @@ module Formtastic
               editor.getSession().on('change', function(e) {
                 document.getElementById('#{dom_id}').value = editor.getValue();
               });
+              
+              // binti-specific
+              editor.getSession().setTabSize(2);
+              editor.getSession().setUseSoftTabs(true);
+              _ACE_EDITORS['#{dom_id}'] = editor;
             })();
           </script>
           JS
