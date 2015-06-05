@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Formtastic::AceEditor::VERSION
   spec.authors       = ["John Bintz"]
   spec.email         = ["john@coswellproductions.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{This is a valid gem description}
+  spec.summary       = %q{This is a valid gem summary}
   spec.homepage      = ""
   spec.license       = "MIT"
 
