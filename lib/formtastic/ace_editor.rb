@@ -12,7 +12,7 @@ module Formtastic
           <style type="text/css">
             ##{dom_id} { display: none; }
             ##{dom_id}-container {
-              height: 200px;
+              height: #{height};
               position: relative;
             }
             ##{dom_id}-editor {
@@ -36,7 +36,7 @@ module Formtastic
               editor.getSession().on('change', function(e) {
                 document.getElementById('#{dom_id}').value = editor.getValue();
               });
-              
+
               // binti-specific
               editor.getSession().setTabSize(2);
               editor.getSession().setUseSoftTabs(true);
@@ -53,6 +53,10 @@ module Formtastic
 
       def mode
         options[:mode] || 'html'
+      end
+
+      def height
+        options[:height] || '500px'
       end
     end
   end
