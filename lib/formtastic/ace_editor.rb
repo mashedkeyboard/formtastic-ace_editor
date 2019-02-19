@@ -19,13 +19,11 @@ module Formtastic
               position: absolute;
               top: 0;
               bottom: 0;
-              left: 0;
+              left: #{left};
               right: 0;
             }
           </style>
           <script type="text/javascript">
-            // make it easier to access the editor later on.
-            window._ACE_EDITORS = window._ACE_EDITORS || {};
             (function() {
               var editor = ace.edit('#{dom_id}-editor');
               editor.setValue(document.getElementById('#{dom_id}').value);
@@ -36,11 +34,6 @@ module Formtastic
               editor.getSession().on('change', function(e) {
                 document.getElementById('#{dom_id}').value = editor.getValue();
               });
-
-              // binti-specific
-              editor.getSession().setTabSize(2);
-              editor.getSession().setUseSoftTabs(true);
-              _ACE_EDITORS['#{dom_id}'] = editor;
             })();
           </script>
           JS
@@ -57,6 +50,10 @@ module Formtastic
 
       def height
         options[:height] || '500px'
+      end
+    
+      def left
+        options[:left] || '0'
       end
     end
   end
