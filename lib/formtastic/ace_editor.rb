@@ -6,12 +6,11 @@ module Formtastic
     class AceInput < TextInput
       def to_html
         input_wrapping do
-          label_html << builder.text_area(method, input_html_options) <<
-          (<<-HTML).html_safe
+          label_html << builder.text_area(method, input_html_options) <<HTML.html_safe
           <div id="#{dom_id}-container" class="ace_editor_container"><div id="#{dom_id}-editor"></div></div>
           HTML
           if use_css
-            label_html << (<<-CSS).html_safe
+            label_html <<CSS.html_safe
             <style type="text/css">
               ##{dom_id} { display: none; }
               ##{dom_id}-container {
@@ -29,7 +28,7 @@ module Formtastic
             CSS
           end
           if use_js
-            label_html << (<<-JS).html_safe
+            label_html <<JS.html_safe
             <script type="text/javascript">
               (function() {
                 var editor = ace.edit('#{dom_id}-editor');
