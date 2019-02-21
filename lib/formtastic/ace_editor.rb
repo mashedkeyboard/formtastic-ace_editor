@@ -47,8 +47,8 @@ module Formtastic
             </script>
             JS
           end
+          label_html
         end
-        label_html
       end
 
       def theme
