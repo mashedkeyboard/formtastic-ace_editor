@@ -24,7 +24,7 @@ module Formtastic
             }
           </style>
           <script type="text/javascript">
-            (function() {
+            document.addEventListener("DOMContentLoaded", function(event) {
               var editor = ace.edit('#{dom_id}-editor');
               editor.setValue(document.getElementById('#{dom_id}').value);
               editor.getSession().setUseWorker(false);
