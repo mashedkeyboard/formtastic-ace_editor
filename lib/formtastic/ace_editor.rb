@@ -6,7 +6,8 @@ module Formtastic
     class AceInput < TextInput
       def to_html
         input_wrapping do
-          label_html << builder.text_area(method, input_html_options) <<HTML.html_safe
+          label_html << builder.text_area(method, input_html_options) <<
+          (<<-HTML).html_safe
           <div id="#{dom_id}-container" class="ace_editor_container"><div id="#{dom_id}-editor"></div></div>
           HTML
           if use_css
